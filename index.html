@@ -24,13 +24,14 @@ body{
   flex-direction:column;
   text-align:center;
   padding:20px;
+  box-sizing: border-box;
 }
 
 /* ---- ENVELOPE ---- */
 .envelope-wrapper{
   position:relative;
-  width:220px;
-  height:150px;
+  width:180px;
+  height:120px;
   cursor:pointer;
 }
 .envelope{
@@ -87,13 +88,14 @@ body{
 /* ---- LETTER PAGE ---- */
 .paper{
   display:none;
-  max-width:600px;
+  max-width:90%;
   margin:40px auto;
   background:white;
   padding:20px;
   border-radius:18px;
   box-shadow:0 6px 20px rgba(0,0,0,0.1);
   animation:fadeIn .6s;
+  box-sizing: border-box;
 }
 @keyframes fadeIn{
   from{opacity:0;transform:translateY(15px)}
@@ -108,46 +110,46 @@ body{
   margin-top:18px;
   font-size:15px;
   cursor:pointer;
-  box-shadow:0 6px 20px rgba(255,0,100,0.25)
+  box-shadow:0 6px 20px rgba(255,0,100,0.25);
+  width: 100%;
+  max-width: 300px;
 }
 
 /* ---- TIMELINE PAGE ---- */
 .timeline-page{
   display:none;
-  padding:20px
+  padding:20px;
 }
 .timeline{
-  max-width:800px;
+  max-width:90%;
   margin:20px auto;
 }
 
 /* ---- FANCY PHOTO CARD ---- */
 .event{
   background:white;
-  padding:16px;
-  margin:14px 0;
+  padding:12px;
+  margin:12px 0;
   border-radius:14px;
   box-shadow:0 4px 14px rgba(0,0,0,0.06);
 }
 .event h3{
   margin:0 0 6px;
   color:var(--accent);
+  font-size:16px;
 }
 .photo-box {
   position: relative;
-  width: 300px;       /* fixed smaller width */
+  width: 100%;
+  max-width:300px; /* card width */
   border: 2px solid var(--accent);
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   perspective: 1200px;
-  margin: 20px auto;
+  margin: 10px auto;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   background: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .photo-card {
@@ -159,15 +161,14 @@ body{
 
 .photo-card img {
   width: 100%;
-  height: auto;           /* scale height automatically */
-  object-fit: contain;    /* fit full image inside card */
+  height: auto;
+  object-fit: contain; /* shows full image */
   border-radius: 14px;
   display: block;
   background: #fff;
 }
 
-
-/* Lid animation (optional) */
+/* Lid animation */
 .photo-lid {
   position: absolute;
   top: 0;
@@ -187,13 +188,30 @@ body{
 }
 
 .card-show img {
-  transform: scale(1.05); /* optional zoom */
+  transform: scale(1.05);
 }
 
-/* Optional responsive */
+/* Responsive adjustments */
 @media (max-width:600px){
+  .center{
+    padding: 15px;
+  }
+  .envelope-wrapper{
+    width:150px;
+    height:100px;
+  }
+  .paper{
+    padding:15px;
+    font-size:14px;
+  }
+  .btn{
+    font-size:14px;
+  }
+  .event h3{
+    font-size:14px;
+  }
   .photo-box{
-    height:180px;
+    max-width:100%;
   }
 }
 </style>
@@ -213,16 +231,16 @@ body{
 <!-- PAGE 2 — Letter -->
 <div class="paper" id="page2">
   <h2 style="margin-top:0;color:#ff2d95">A Letter From Dudu to Bubu 💌</h2>
-  <p>To my Wife 💌,<br><br>
+  <p>
+    To my Wife 💌,<br><br>
 
-    Bubu, I’m truly sorry for the pain I caused. You are my favorite person, my peace, and my happiness. I promise to listen, understand, and love you better. I never want to lose you.
+    Bubu, I’m truly sorry for the pain I caused. You are my favorite person, my peace, and my happiness. I promise to listen, understand, and love you better. I never want to lose you. 
     babu m bht aacha toh nhi hu but tere hu yrr hr time tere bara hi souch rha tha m nanu m kb se tera liya hi apna sb kuch kr rha hu or kruga bht kruga babu or tu call ki bool gha ik i call nhi kr ansh mana puch liya tha ki tu ghr agya usa boldiaagyi didi 5 min pale but bui m nh bht pyrrr ke tha hu tere se sb kr hu m nanu but 
     ky keru jb kuch kr jau sb glt ho ja tha h m ek bui wait ke tha tu agya agya tu ek br messgae hi dhk gha buss mera seen hi kr la gha m wait kr tha rha nnau ki ab aya gha online ab aya gha but tu aya nhi nanu 
     m bht bura feel kr rha hu babu m janta hu m ghalat hu or m apni ghalti ko smjh gya hu or m apni ghalti ko dobara nhi kruga plz mujhe maaf krd
     and laado tera siivaa mera haa nh koi nh ho sk tha but tu hi mera sb kuki tu h toh h mera nanu jesa m nh keu mkuh koi or tu h sb meri nh kuch ho jiya mera nh ho piya nh kuch tera sivhaaa ky mylb jina k tu h toh m hu duniya m tra se kr ni h shdi mrko jb toh kr tha hu sb m nanu 
-    maaf k liya toh nhi hu maaf krt dianbui ho piya tha toh saab kuch kr dunga plz mko ek chnce or d de bui
-e. I love you more than words can express, and I want to make things right between us. Please forgive me, my love.
-    <br><br>
+    maaf k liya toh nhi hu maaf krt dianbui ho piya tha toh saab kuch kr dunga plz mko ek chnce or d de bui.<br><br>
+    I love you more than words can express, and I want to make things right between us. Please forgive me, my love.<br><br>
     Forever yours,<br>
     Dudu 💗
   </p>
@@ -233,54 +251,53 @@ e. I love you more than words can express, and I want to make things right betwe
 <div class="timeline-page" id="page3">
   <h2 style="text-align:center;color:#ff2d95">Our Journey (2019–2025)</h2>
   <div class="timeline">
-    <!-- Loop 2019–2025 -->
     <div class="event">
       <h3>2019 — The Beginning</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2019.jpg" /></div>
+        <div class="photo-card"><img src="./image/2019.jpg" alt="2019"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2020 — Growing Closer</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2020.jpg" /></div>
+        <div class="photo-card"><img src="./image/2020.jpg" alt="2020"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2021 — Favorite Moments</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2021.jpg" /></div>
+        <div class="photo-card"><img src="./image/2021.jpg" alt="2021"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2022 — Stronger Together</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2022.jpg" /></div>
+        <div class="photo-card"><img src="./image/2022.jpg" alt="2022"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2023 — Memories</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2023.jpg" /></div>
+        <div class="photo-card"><img src="./image/2023.jpg" alt="2023"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2024 — Our Love</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2024.jpg" /></div>
+        <div class="photo-card"><img src="./image/2024.jpg" alt="2024"/></div>
       </div>
     </div>
     <div class="event">
       <h3>2025 — Still You & Me</h3>
       <div class="photo-box">
         <div class="photo-lid"></div>
-        <div class="photo-card"><img src="./image/2025.jpg" /></div>
+        <div class="photo-card"><img src="./image/2025.jpg" alt="2025"/></div>
       </div>
     </div>
   </div>
